@@ -24,12 +24,12 @@ export default function Profile() {
     }, [userId]);
 
     async function handleDeleteRequest(id){
-        try{
+        try {
             await api.delele(`/services/${id}`, {
                 headers: {
                     Authorization: userId,
                 }
-            });
+            })
         } catch (err) {
             Swal.fire({
                 icon: 'error',
@@ -66,7 +66,7 @@ export default function Profile() {
                     <strong>Orçamento possível:</strong>
                     <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(request.budget)}</p>
 
-                    <button onClick={handleDeleteRequest(request.id)} type="button">
+                    <button onClick={() => handleDeleteRequest(request.id)} type="button">
                         <FiTrash2 size={20} color="#737380"/>
                     </button>
                 </li>
