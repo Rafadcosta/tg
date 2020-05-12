@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {FiPower, FiTrash2} from 'react-icons/fi';
 import logo from '../../assets/logo.png';
 import api from '../../services/api';
@@ -12,6 +12,7 @@ export default function Profile() {
 
     const userId = localStorage.getItem('userId');
     const userName = localStorage.getItem('userName');
+    const history = useHistory();
 
     useEffect(() => {
         api.get('/profile', {
@@ -25,12 +26,19 @@ export default function Profile() {
 
     async function handleDeleteRequest(id){
         try {
+            
             await api.delete(`/services/${id}`, {
                 headers: {
                     Authorization: userId,
                 }
             });
 
+            Swal.fire({
+                icon: 'success',
+                title: 'Boa!',
+                text: 'O cadastro foi realizado com sucesso!'       
+            });
+            
             setRequests(requests.filter(request => request.id !== id));
         } catch (err) {
             Swal.fire({
@@ -41,6 +49,12 @@ export default function Profile() {
         }
     }
 
+    function handleLogout() {
+        localStorage.clear();
+       
+        history.push('/');
+    }
+
     return (
       <div className="profile-container">
           <header>
@@ -49,7 +63,7 @@ export default function Profile() {
 
               <Link className="button" to="/solicitacao/novo">Solicitar um serviço</Link>
 
-              <button type="button">
+              <button onClick={handleLogout} type="button">
                   <FiPower size={18} color="#f6838d"/>
               </button>
           </header>
