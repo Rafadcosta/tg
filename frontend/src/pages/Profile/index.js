@@ -29,7 +29,9 @@ export default function Profile() {
                 headers: {
                     Authorization: userId,
                 }
-            })
+            });
+
+            setRequests(requests.filter(request => request.id !== id));
         } catch (err) {
             Swal.fire({
                 icon: 'error',
