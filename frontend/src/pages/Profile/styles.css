@@ -31,13 +31,13 @@
     border-radius: 8px;
     border: 2px solid #f6838d;
     background: transparent;
+    border-radius: 50%;
     margin-left: 16px;
-    transition: filter, border-radius 0.5s;
+    transition: filter 0.5s;
 }
 
 .profile-container header button:hover{    
-    filter: brightness(90%);
-    border-radius: 50%;
+    filter: brightness(90%);    
 }
 
 .profile-container h1{
