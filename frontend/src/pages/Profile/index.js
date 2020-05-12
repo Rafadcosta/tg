@@ -35,7 +35,7 @@ export default function Profile() {
                 icon: 'error',
                 title: 'Opa...',
                 text: 'Erro ao deletar, tente novamente!'       
-            });
+            }); 
         }
     }
 

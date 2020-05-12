@@ -12,10 +12,10 @@ module.exports ={
             .offset((page-1)*5)
             .select(['services.*',
                      'users.name',
-                    'users.email',
-                    'users.whatsapp',
-                    'users.city',
-                    'users.uf']);
+                     'users.email',
+                     'users.whatsapp',
+                     'users.city',
+                     'users.uf']);
 
         response.header('X-Total-Count', count['count(*']);
     
