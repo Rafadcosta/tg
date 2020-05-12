@@ -25,7 +25,7 @@ export default function Profile() {
 
     async function handleDeleteRequest(id){
         try {
-            await api.delele(`/services/${id}`, {
+            await api.delete(`/services/${id}`, {
                 headers: {
                     Authorization: userId,
                 }
@@ -71,8 +71,6 @@ export default function Profile() {
                     </button>
                 </li>
               ))}
-
-
           </ul>
       </div>
     );
