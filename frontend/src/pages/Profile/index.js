@@ -35,8 +35,8 @@ export default function Profile() {
 
             Swal.fire({
                 icon: 'success',
-                title: 'Boa!',
-                text: 'O cadastro foi realizado com sucesso!'       
+                title: 'Sucesso!',
+                text: 'A solicitação foi excluída!'       
             });
             
             setRequests(requests.filter(request => request.id !== id));
