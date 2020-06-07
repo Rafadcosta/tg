@@ -56,7 +56,7 @@ export default function Register() {
 
               <Link className="back-link" to="/">
                   <FiArrowLeft size={18} color="#5cc7d3"/>
-                  Não tenho cadastro
+                  Voltar
               </Link>
             </section>
             <form onSubmit={handleRegister}>
@@ -85,6 +85,8 @@ export default function Register() {
                     onChange={e => setUf(e.target.value)}/>
               </div>
 
+              <div>
+                <label>*Obrigatório o preenchimento de todos os campos.</label></div>
               <button className="button" type="submit">Cadastrar</button>
             </form>
         </div>

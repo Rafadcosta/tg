@@ -55,3 +55,12 @@
 .register-container .content form .input-group input + input{
     margin-left: 8px;
 }
+
+.register-container .content div label{
+    margin-top: 50px;
+}
+
+.register-container .content label{
+    color: #5cc7d3;
+    font-weight: 500;
+}

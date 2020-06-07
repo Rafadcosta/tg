@@ -25,7 +25,7 @@ export default function Login() {
       Swal.fire({
         icon: 'error',
         title: 'Opa...',
-        text: 'Falha no login, tente novamente!'       
+        text: 'ID não encontrado, tente novamente!'       
       });
     }
 
